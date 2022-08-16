@@ -1,0 +1,29 @@
+﻿<Button x:Class="MancalaAssessment.Views.Pit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MancalaAssessment.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="120">
+    <Button.Template>
+        <ControlTemplate TargetType="Button">
+            <Grid>
+                <Ellipse Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Stroke="{Binding Stroke, RelativeSource={RelativeSource AncestorType=local:Pit}}">
+                    <Ellipse.Style>
+                        <Style TargetType="Ellipse">
+                            <Setter Property="Fill" Value="#EEE" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Cursor" Value="Hand" />
+                                    <Setter Property="Fill" Value="Aqua" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Ellipse.Style>
+                </Ellipse>
+                <TextBlock Text="{Binding Stones, RelativeSource={RelativeSource AncestorType=local:Pit}}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" />
+            </Grid>
+        </ControlTemplate>
+    </Button.Template>
+</Button>
